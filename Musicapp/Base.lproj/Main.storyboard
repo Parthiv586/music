@@ -12,11 +12,13 @@
         <array key="Inter Medium 500.otf">
             <string>Inter-Medium</string>
         </array>
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
         <array key="Inter-SemiBold.ttf">
             <string>Inter-SemiBold</string>
         </array>
         <array key="Inter-VariableFont_slnt,wght.ttf">
-            <string>Inter-Regular</string>
             <string>Inter-Regular_Medium</string>
         </array>
     </customFonts>
