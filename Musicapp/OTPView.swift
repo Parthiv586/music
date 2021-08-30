@@ -1,10 +1,13 @@
 import UIKit
-
+public var count = 0
 public class OTPView: UIStackView {
     var textFieldArray = [OTPTextField]()
     var numberOfOTPdigit = 4
     var t:String = ""
-
+    var filledotp = 0
+    var isfilled = false
+//    var count = 0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -17,6 +20,7 @@ public class OTPView: UIStackView {
         setupStackView()
         setTextFields()
         strotp = Int(t)
+        
     }
     
     private func setupStackView() {
@@ -50,10 +54,12 @@ public class OTPView: UIStackView {
             
         }
     }
+  
+      
 }
 
 extension OTPView: UITextFieldDelegate {
-    
+   
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard  let field = textField as? OTPTextField else {
             return true
@@ -61,20 +67,32 @@ extension OTPView: UITextFieldDelegate {
         if !(string.isEmpty) {
             field.text = string
             field.textColor = UIColor(red: 0.642, green: 0.677, blue: 0.718, alpha: 1)
+           //otp appending
             if field.text != "" {
                 t.append(field.text!)
-                print(t)
+                    print(t)
             }
+                //debug
+                /*let ams = field.viewWithTag(0)
+                print(type(of: ams!))
+                filledotp += 1*/
+
+            count += 1
             field.resignFirstResponder()
             field.layer.borderColor = clr.cgColor
             field.nextTextFiled?.becomeFirstResponder()
+         //       resendview().islasttextfield(otp: t)
             return true
         } else {
             field.layer.borderColor = txtborder.cgColor
         }
+                        if count == 3 {
+                           print("last field")
+                            resendview().checktext()
+                        }
         return true
     }
-
+   
 }
 
 class OTPTextField: UITextField {

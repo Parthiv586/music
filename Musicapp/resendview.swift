@@ -7,13 +7,13 @@
 import UIKit
 import Foundation
 class resendview: UIViewController {
-
+   
+    
     @IBOutlet weak var str: UILabel!
     @IBOutlet weak var otptext: OTPView!
-    @IBOutlet weak var sendotp: UIButton!
+//    @IBOutlet weak var sendotp: UIButton!
     
-    
-    @objc func onTextChange()  {
+/*    @objc func onTextChange()  {
         sendotp.isUserInteractionEnabled = true
         if !(otptext.textFieldArray.last?.text!.isEmpty ?? true) {
         sendotp.backgroundColor = clr
@@ -21,9 +21,15 @@ class resendview: UIViewController {
             sendotp.isUserInteractionEnabled = false
             sendotp.backgroundColor = btngrey
         }
-    }
-    
+    }*/
 
+    @objc func checktext()  {
+        print("check2")
+        
+//        OTPView()
+    }
+
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         let otpView = OTPView()
@@ -31,11 +37,12 @@ class resendview: UIViewController {
         otpView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         otpView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
-        // bold resend tex
-    
-        let atrbold = attributedText(withString: str.text!, boldString: "Resend Code.", font: UIFont(name: "Inter-Medium", size: 15)!, color: clr)
+        // bold resend text
+        let atrbold = attributedText(withString: str.text!, boldString: "Resend Code", font: UIFont(name: "Inter-Medium", size: 15)!, color: clr)
+        
         str.attributedText = atrbold
-    }
+        
+        }
 }
 
 //   custom string #############################

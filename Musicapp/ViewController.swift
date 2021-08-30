@@ -9,6 +9,12 @@ public let btngrey = #colorLiteral(red: 0.7764705882, green: 0.8, blue: 0.823529
 public let clr = #colorLiteral(red: 1, green: 0.3568627451, blue: 0.4431372549, alpha: 1) //active__btn
 public var newview = false
 public var strotp: Int?
+
+public func dosegue(_ id: String?,_ from:UIViewController,_ to: UIViewController) {
+    let s = UIStoryboardSegue(identifier: id, source: from, destination: to)
+    s.perform()
+}
+
 class ViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
