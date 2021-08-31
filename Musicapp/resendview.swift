@@ -11,7 +11,11 @@ class resendview: UIViewController {
     
     @IBOutlet weak var str: UILabel!
     @IBOutlet weak var otptext: OTPView!
-//    @IBOutlet weak var sendotp: UIButton!
+    @IBAction func tosetpassword() {
+        performSegue(withIdentifier: "resendToSetPassword", sender: Any?.self)
+        
+    }
+    //    @IBOutlet weak var sendotp: UIButton!
     
 /*    @objc func onTextChange()  {
         sendotp.isUserInteractionEnabled = true
@@ -22,13 +26,7 @@ class resendview: UIViewController {
             sendotp.backgroundColor = btngrey
         }
     }*/
-
-    @objc func checktext()  {
-        print("check2")
-        
-//        OTPView()
-    }
-
+ 
         
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,13 +12,11 @@
         <array key="Inter Medium 500.otf">
             <string>Inter-Medium</string>
         </array>
-        <array key="Inter-Regular.ttf">
-            <string>Inter-Regular</string>
-        </array>
-        <array key="Inter-SemiBold.ttf">
+        <array key="Inter Semi Bold 600.otf">
             <string>Inter-SemiBold</string>
         </array>
         <array key="Inter-VariableFont_slnt,wght.ttf">
+            <string>Inter-Regular</string>
             <string>Inter-Regular_Medium</string>
         </array>
     </customFonts>
@@ -283,6 +281,9 @@ UmVzZXQgUBBhc3N3b3JkA
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tosetpassword" destination="zH6-XG-2mA" eventType="touchUpInside" id="XJW-PV-ABy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dqd-jc-Uvd"/>
@@ -307,6 +308,7 @@ UmVzZXQgUBBhc3N3b3JkA
                     <connections>
                         <outlet property="otptext" destination="vIo-8a-iaM" id="ubb-0V-Gdk"/>
                         <outlet property="str" destination="wNo-G5-GNm" id="Cfz-b2-fJb"/>
+                        <segue destination="QE5-uc-Iba" kind="show" identifier="resendToSetPassword" id="TnY-dA-b84"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nE4-1g-c89" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -318,11 +320,11 @@ UmVzZXQgUBBhc3N3b3JkA
             <objects>
                 <viewController id="QE5-uc-Iba" customClass="setnewpasswordVC" customModule="Musicapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="il3-nI-KT4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGo-op-hqQ">
-                                <rect key="frame" x="20" y="133" width="374" height="140"/>
+                                <rect key="frame" x="20" y="101" width="374" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="OWK-gg-IuT"/>
                                 </constraints>
@@ -331,7 +333,7 @@ UmVzZXQgUBBhc3N3b3JkA
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ps5-Dn-MI6">
-                                <rect key="frame" x="20" y="740" width="374" height="48"/>
+                                <rect key="frame" x="20" y="686" width="374" height="48"/>
                                 <color key="backgroundColor" red="0.77647058823529413" green="0.80000000000000004" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="IL1-kh-90v"/>
@@ -348,7 +350,7 @@ UmVzZXQgUBBhc3N3b3JkA
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCz-FI-Yc4">
-                                <rect key="frame" x="20" y="298" width="374" height="48"/>
+                                <rect key="frame" x="20" y="266" width="374" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="hIR-EI-Sg7"/>
                                 </constraints>
@@ -356,7 +358,7 @@ UmVzZXQgUBBhc3N3b3JkA
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rOy-NV-dTd">
-                                <rect key="frame" x="20" y="393" width="374" height="24"/>
+                                <rect key="frame" x="20" y="361" width="374" height="24"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="y20-1T-ndh">
                                         <rect key="frame" x="0.0" y="0.5" width="24" height="23"/>
@@ -377,7 +379,7 @@ UmVzZXQgUBBhc3N3b3JkA
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-ok-Eam">
-                                <rect key="frame" x="20" y="437" width="374" height="24"/>
+                                <rect key="frame" x="20" y="405" width="374" height="24"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4Q2-yj-NWr">
                                         <rect key="frame" x="0.0" y="0.5" width="24" height="23"/>
@@ -398,7 +400,7 @@ UmVzZXQgUBBhc3N3b3JkA
                                 </constraints>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8v-Yx-S9L">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Set New Password" id="Yjg-Qf-b5R">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="WnP-8s-Z7a"/>
